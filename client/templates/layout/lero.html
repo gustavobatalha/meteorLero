@@ -1,0 +1,20 @@
+<template name="lero">
+    <h5>
+        <button class="remove">&times;</button>
+        {{autor}}
+    </h5>
+    <p>
+        {{ texto }}
+    </p>
+    
+    <div class="col s11 offset-s1">
+        <ul>
+            {{# each c in comentarios}}
+                <li> {{ c.texto}} </li>
+            {{/ each }}
+        </ul>
+    </div>
+
+    
+    <hr>
+</template>
