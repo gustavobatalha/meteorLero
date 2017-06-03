@@ -18,7 +18,8 @@ Template.leroList.events({
         
         Lero.insert({
             autor:target.autor.value,
-            texto:target.lero.value
+            texto:target.lero.value,
+            comentarios:[]
         });
         target.reset();
     }

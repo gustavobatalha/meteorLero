@@ -9,5 +9,21 @@ Template.lero.events({
         Lero.remove({
             _id:this._id
         })        
+    },
+    'click .comentar'(){
+
+    
+        let comentario = {texto: $('#comentario').val()};
+
+        this.comentarios.push(comentario);
+
+        Lero.update(
+            {
+                _id:this._id
+            },{
+                $set:{
+                    comentarios: this.comentarios
+                }
+            });
     }
 });

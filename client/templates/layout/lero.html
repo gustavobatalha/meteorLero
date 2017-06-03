@@ -1,20 +1,32 @@
 <template name="lero">
     <h5>
         <button class="remove">&times;</button>
-        {{autor}}
+        {{ autor }}
     </h5>
     <p>
         {{ texto }}
     </p>
     
     <div class="col s11 offset-s1">
-        <ul>
-            {{# each c in comentarios}}
-                <li> {{ c.texto}} </li>
-            {{/ each }}
-        </ul>
+        
+        <div class="input-field col s10" >
+            <input placeholder="Comentario" id="comentario" type="text" name="comentario">
+            <label for="comentario">Comentario</label>
+        </div>
+        <div class="col s2">
+            <button class="btn waves-effect waves-light comentar" type="button" >
+                Comentar
+            </button>
+        </div>
+        <div class="col s12">
+            <ul>
+                {{# each c in comentarios}}
+                    <li> {{ c.texto}} </li>
+                {{/ each }}
+            </ul>
+        </div>
+        
     </div>
-
     
     <hr>
 </template>
