@@ -18,14 +18,7 @@
 </head>
 
 <body>
-  {{> header}}
-  <div id="content" class="container">
-    <div class="row">
-      {{> leroList}}
-    </div>
-  </div>
   
-  {{> footer}}
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -34,3 +27,45 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   
 </body>
+
+
+<template name="main">
+  {{> header}}
+  <div id="content" class="container">
+
+    <div class="row">
+        <div class="right">
+
+          {{# if currentUser }}
+          
+            <button class="btn waves-effect waves-light" type="button" id="logoff">
+                Logoff
+            </button>
+          {{ else }}
+            <button class="btn waves-effect waves-light" type="button" id="cadastrar">
+              Cadastrar
+            </button>
+          {{/ if  }}
+          
+
+        </div>
+        
+    </div>
+    
+    <div class="row">
+
+      {{# if currentUser }}
+        {{ saudacao }}
+        {{> leroList}}
+      {{ else}}
+        {{# if cadastrar}}
+          {{> cadastrar}}
+        {{ else }}
+          {{> login}}
+        {{/ if }}
+      {{/ if}}
+    </div>
+  </div>
+  
+  {{> footer}}
+</template>

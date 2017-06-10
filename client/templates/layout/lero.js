@@ -6,16 +6,15 @@ import './lero.html';
 
 Template.lero.events({
     'click .remove'(){
-        Lero.remove({
-            _id:this._id
-        })        
+        Meteor.call('removeLero', this._id);
     },
     'click .comentar'(){
 
     
-        let comentario = {texto: $('#comentario').val()};
-
+        let comentario = {texto: $('#comentario').val(),autor:Meteor.userId()};
         this.comentarios.push(comentario);
+
+        $('#comentario').val('');
 
         Lero.update(
             {

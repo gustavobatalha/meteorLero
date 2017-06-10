@@ -21,7 +21,7 @@
         <div class="col s12">
             <ul>
                 {{# each c in comentarios}}
-                    <li> {{ c.texto}} </li>
+                    <li> <small>{{ c.autor}}</small> - {{ c.texto}} </li>
                 {{/ each }}
             </ul>
         </div>
